@@ -13,8 +13,18 @@ const routes = require('./app/routes');
 mongoose.connect(config.dbURI);
 app.use(express.static(path.join(__dirname, 'public')));
 
+
+
+// view engine setup
+app.set('views', path.join(__dirname, 'views'));
 app.engine('ejs', engine);
 app.set('view engine', 'ejs');
+
+
+//path
+app.use(express.static(path.join(__dirname, 'public')));
+
+
 app.use(
   session({
     secret: config.sessionSecret,
@@ -36,6 +46,13 @@ app.use(bodyParser.urlencoded({
 }));
 
 app.use(routes);
+
+//routes
+app.get("/test/login",(req,res)=>{
+   res.render("login.ejs");
+});
+
+
 app.listen(config.port, () => {
   console.log(`Server running on port ${config.port}`);
 });
