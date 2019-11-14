@@ -7,12 +7,11 @@ const path = require('path');
 const engine = require('ejs-locals');
 
 const app = express();
-const config = require('./config');
+const config = require('./config/config.example');
 const routes = require('./app/routes');
 
-mongoose.connect(config.dbURI);
+mongoose.connect(config.dbURI,{ useNewUrlParser: true });
 app.use(express.static(path.join(__dirname, 'public')));
-
 
 
 // view engine setup
