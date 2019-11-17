@@ -10,13 +10,12 @@ const userSchema = new mongoose.Schema({
     },
     password: {
         type : String,
-        required : true;
+        required : true
     },
-    date: {
+    createdon: {
         type:Date,
         default: Date.now
     }
-
 });
 
 const User = mongoose.model('users', userSchema);
