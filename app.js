@@ -51,6 +51,9 @@ app.use(routes);
 app.get("/test/login",(req,res)=>{
    res.render("login.ejs");
 });
+app.get("/test/registration",(req,res)=>{
+  res.render("registration.ejs");
+})
 
 
 app.listen(config.port, () => {
