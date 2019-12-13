@@ -5,7 +5,7 @@ const userSchema = new mongoose.Schema({
         required : true
     },
     email: {
-        type  :String,
+        type:String,
         required : true
     },
     password: {
@@ -15,6 +15,10 @@ const userSchema = new mongoose.Schema({
     createdon: {
         type:Date,
         default: Date.now
+    },
+    phone: {
+        type: String,
+        required: true
     }
 });
 
