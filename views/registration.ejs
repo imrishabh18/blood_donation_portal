@@ -57,14 +57,30 @@
                       </div>
 
                       <div class="form-label-group">
-                        <input type="password" id="Password" class="form-control" placeholder="Password" required>
+                        <input type="password" id="Password" class="form-control" placeholder="Password" onkeyup='check();' required>
                         <label for="Password">Password</label>
                       </div>
 
                       <div class="form-label-group">
-                        <input type="password" id="Password" class="form-control" placeholder="Password" required>
+                        <input type="password" id="Confirm_Password" class="form-control" placeholder="Password" onkeyup='check();' required>
                         <label for="Password">Confirm Password</label>
+                        <br>
+                        <span id="Message"></span>
                       </div>
+
+                      <!-- To check the password and confirm-passowrd are the same- -->
+                      <script>
+                         var check = function() {
+                          if (document.getElementById('Password').value ==
+                            document.getElementById('Confirm_Password').value) {
+                            document.getElementById('Message').style.color = 'green';
+                            document.getElementById('Message').innerHTML = 'Password Match';
+                          } else {
+                            document.getElementById('Message').style.color = 'red';
+                            document.getElementById('Message').innerHTML = 'Password do not match';
+                          }
+                        }
+                      </script>                      
 
                       <div class="custom-control custom-checkbox mb-3">
                         <input type="checkbox" class="custom-control-input" id="customCheck1">
