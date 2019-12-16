@@ -39,7 +39,7 @@
                           <h5 class="card-title text-center">Register</h5>
                           </div>
                       </div>
-                    <form class="form-signin" method="POST" action="/">
+                    <form class="form-signin" method="POST" action="/" onsubmit="return check();">
                       <div class="fadeIn third">
                       <div class="form-label-group">
                           <input type="text" id="name" class="form-control" placeholder="Full Name" required autofocus>
@@ -75,9 +75,11 @@
                             document.getElementById('Confirm_Password').value) {
                             document.getElementById('Message').style.color = 'green';
                             document.getElementById('Message').innerHTML = 'Password Match';
+                            return true;
                           } else {
                             document.getElementById('Message').style.color = 'red';
                             document.getElementById('Message').innerHTML = 'Password do not match';
+                            return false;
                           }
                         }
                       </script>                      
